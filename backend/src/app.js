@@ -30,13 +30,12 @@ app.use(cors({
 }))
 
 
-if(process.env.NODE_ENV === 'production') {
-    const distPath = path.join(__dirname, '../frontend/dist');
-    app.use(express.static(distPath));
 
-    app.get('/*splat', (req, res) => {
-        res.sendFile(path.join(distPath, 'index.html'));
-    });
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.join(__dirname, "../frontend/dist")));
+	app.get("/*splat", (req, res) => {
+		res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+	});
 }
 app.use(extendResponse);
 app.use(clerkMiddleware()); // Xác thực trả về req.auth có user
