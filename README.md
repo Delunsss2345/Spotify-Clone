@@ -10,14 +10,7 @@ Clone Spotify **FullStack** với **Node.js**, **MongoDB**, **Cloudinary**, **Cl
 - Cloudinary account
 - Clerk account
 
-## 🚀 Cài đặt
 
-### 1️⃣ Clone project:
-```bash
-git clone <REPO_URL>
-cd <REPO_FOLDER>
-npm run build
-```
 ### 🌱 Tạo file môi trường
 ```bash
 Env  
