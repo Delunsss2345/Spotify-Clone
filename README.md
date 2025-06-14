@@ -17,7 +17,9 @@ Clone Spotify với **Node.js**, **MongoDB**, **Cloudinary**, **Clerk**, và **R
 git clone <REPO_URL>
 cd <REPO_FOLDER>
 npm run build
-
+```
+### 🌱 Tạo file môi trường
+```bash
 Env  
 CLOUDINARY_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
@@ -33,7 +35,13 @@ CLERK_SECRET_KEY=your_clerk_secret_key
 Env frontend
 VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
 
+```
 
-Chạy dự án
+### Chạy dự án
+```bash
+npm run build
 npm run start --prefix backend
+```
+
+
 
