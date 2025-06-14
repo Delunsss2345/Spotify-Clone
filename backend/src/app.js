@@ -1,5 +1,7 @@
 require('dotenv/config') ; 
 const express = require('express');
+const path = require('path');
+
 const { clerkMiddleware } = require('@clerk/express');
 const cors = require('cors')
 
@@ -27,11 +29,15 @@ app.use(cors({
     credentials : true 
 }))
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirname , "../frontend/dist"))
-    app.get("/*splat" , (req , res) => res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html")))
-}
 
+if(process.env.NODE_ENV === 'production') {
+    const distPath = path.join(__dirname, '../frontend/dist');
+    app.use(express.static(distPath));
+
+    app.get('/*splat', (req, res) => {
+        res.sendFile(path.join(distPath, 'index.html'));
+    });
+}
 app.use(extendResponse);
 app.use(clerkMiddleware()); // Xác thực trả về req.auth có user
 app.use(uploadFile) //Middleware cho phép upload file vào thư mục
