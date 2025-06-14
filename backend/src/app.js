@@ -32,7 +32,9 @@ app.use(cors({
 
 
 if (process.env.NODE_ENV === 'production') {
-    const distPath = path.join(__dirname, '../frontend/dist');
+    const distPath = path.resolve(__dirname, '../../frontend/dist');
+    console.log("Serving static from:", distPath);
+
     app.use(express.static(distPath));
 
     app.get('/*splat', (req, res) => {
