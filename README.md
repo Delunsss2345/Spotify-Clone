@@ -1,6 +1,6 @@
 # Spotify Clone 🎵
 
-Clone Spotify với **Node.js**, **MongoDB**, **Cloudinary**, **Clerk**, và **React (Vite)**.
+Clone Spotify **FullStack** với **Node.js**, **MongoDB**, **Cloudinary**, **Clerk**, **Socket.Io** , **TypeScript** và **React (Vite)**.
 
 ## ⚙ Yêu cầu
 
